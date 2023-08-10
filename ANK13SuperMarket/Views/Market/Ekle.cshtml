@@ -1,0 +1,28 @@
+﻿@using ANK13SuperMarket.Entities;
+@model Product
+<div>
+
+    <form asp-controller="Market" asp-action="Ekle" method="post">
+        <div class="form-group">
+            <label asp-for="Name"> ÜRÜN ADI:   </label>
+            <input asp-for="Name" type="text" class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price"> ÜRÜN FİYATI:   </label>
+            <input asp-for="Price" type="number" min="1" class="form-control" />
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Stock"> ÜRÜN STOKU: </label>
+            <select asp-for="Stock" class="form-control">
+                <option value="true">Var</option>
+                <option value="false">Yok</option>
+            </select>
+        </div>
+        <br><br/>
+        <button type="submit" class="btn btn-primary">EKLE</button>
+    </form>
+</div>

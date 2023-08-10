@@ -1,0 +1,32 @@
+﻿@using ANK13SuperMarket.Entities;
+@model Product
+
+<h1>ÜRÜN SİLME</h1>
+
+<h2>@Model.Name isimli  @Model.Price fiyatlı ürünü guncellemek istediğinize emin misiniz?</h2>
+
+ <form asp-controller="Market" asp-action="Guncelle" method="post">
+
+    <div class="form-group">
+        <label asp-for="Name"> ÜRÜN ADI:   </label>
+        <input asp-for="Name" type="text" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"> ÜRÜN FİYATI:   </label>
+        <input asp-for="Price" type="number" min="1" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Stock"> ÜRÜN STOKU:   </label>
+        <input asp-for="Stock" type="number" min="1" class="form-control" />
+
+    </div>
+
+    <button type="submit" class="btn btn-danger">GUNCELLE</button>
+
+</form>
+
+<a class="btn btn-primary" asp-action="Index">Listeye Dön</a>
